@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kronk's GIF Rotator</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <img id="gif" src="" alt="Rotating GIF">
+  <script>
+    const gifs = [
+      "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif",
+      "https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif",
+      "https://media.giphy.com/media/26BkNrGhy4DKnbD9u/giphy.gif"
+    ];
+    let i = 0;
+    const gifElement = document.getElementById("gif");
+
+    function rotateGif() {
+      gifElement.src = gifs[i];
+      i = (i + 1) % gifs.length;
+    }
+
+    rotateGif();
+    setInterval(rotateGif, 5000); // change GIF every 5 seconds
+  </script>
+</body>
+</html>
