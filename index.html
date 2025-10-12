@@ -17,24 +17,30 @@
       align-items: center;
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* fills the screen, cropping edges if needed */
-      border: none;
-    }
-
     #gif-container {
       width: 320px;
       height: 320px;
       overflow: hidden;
-      border-radius: 50%; /* optional: circular frame like the Z73 display */
+      border-radius: 50%; /* Makes it circular for Z73 */
       background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #gif {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Crop edges if needed */
+      border: none;
     }
   </style>
 </head>
 <body>
-  <img id="gif" src="" alt="Rotating GIF">
+  <div id="gif-container">
+    <img id="gif" src="" alt="Rotating GIF">
+  </div>
+
   <script>
     const gifs = [
       "https://el.phncdn.com/gif/3480851.gif",
@@ -43,7 +49,6 @@
       "https://el.phncdn.com/gif/30072511.gif",
       "https://el.phncdn.com/gif/30072541.gif",
       "https://el.phncdn.com/gif/30072341.gif",
-      "https://el.phncdn.com/gif/30072341.gif"'
       "https://el.phncdn.com/gif/33777832.gif",
       "https://el.phncdn.com/gif/30232381.gif",
       "https://el.phncdn.com/gif/36289851.gif",
@@ -96,9 +101,9 @@
       "https://el.phncdn.com/gif/51359531.gif",
       "https://el.phncdn.com/gif/29721811.gif",
       "https://el.phncdn.com/gif/50974781.gif",
-      "https://el.phncdn.com/gif/51423271.gif",
-
+      "https://el.phncdn.com/gif/51423271.gif"
     ];
+
     let i = 0;
     const gifElement = document.getElementById("gif");
 
@@ -108,7 +113,7 @@
     }
 
     rotateGif();
-    setInterval(rotateGif, 5000); // change GIF every 5 seconds
+    setInterval(rotateGif, 5000); // switch every 5 seconds
   </script>
 </body>
 </html>
