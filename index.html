@@ -111,7 +111,9 @@
       gifElement.src = gifs[i];
       i = (i + 1) % gifs.length;
     }
-
+    const randomStart = Math.floor(Math.random() * gifs.length);
+i = randomStart;
+    
     rotateGif();
     setInterval(rotateGif, 5000); // switch every 5 seconds
   </script>
